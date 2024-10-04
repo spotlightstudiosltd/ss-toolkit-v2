@@ -9,7 +9,7 @@ define('SLUG', $pluginFile);
 define('GITHUBUSERNAME', 'spotlightstudiosltd');
 
 // DEFINE GITHUB project repo name
-define('GITHUBPROJECTREPO', 'ss-toolkit');
+define('GITHUBPROJECTREPO', 'ss-toolkit-v2');
 
 // DEFINE plugin GITHUB project branch name
 define('GITHUBBRANCH', 'main');
