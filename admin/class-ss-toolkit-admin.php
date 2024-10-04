@@ -43,9 +43,9 @@ class Ss_Toolkit_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    2.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @since	 2.0.0
+	 * @param    string    $plugin_name       The name of this plugin.
+	 * @param    string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -73,8 +73,20 @@ class Ss_Toolkit_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ss-toolkit-admin.css', array(), $this->version, 'all' );
+		function get_current_admin_page_slug() {
+		    // Check if we are in the admin area
+		    if ( is_admin() && isset( $_GET['page'] ) ) {
+		        return sanitize_text_field( $_GET['page'] );
+		    }
+		    return false;
+		}
 
+		// Usage
+		$current_page = get_current_admin_page_slug();
+		if ( $current_page === 'ss-toolkit' ) {
+		    // Your code for ss-toolkit page
+		    wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ss-toolkit-admin.css', array(), $this->version, 'all' );
+		}
 	}
 
 	/**

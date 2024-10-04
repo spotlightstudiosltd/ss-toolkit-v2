@@ -3,189 +3,199 @@
  * included in this file.
  */
 
-.tab1{
-  height: 80vh;
-  background-color: #FFF;
+
+/* Define the styles for the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.tab1 table{
-  border: none;
-  box-shadow: none;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.toggle-switch {
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle on drag */
+::-webkit-scrollbar-thumb:active {
+  background: #555;
+}
+
+
+
+/* Switch */
+.tools-setting .uk-switch {
   position: relative;
   display: inline-block;
-  width: 44px;
-  height: 27px;
+  height: 34px;
+  width: 60px;
 }
 
-.toggle-switch input {
+/* Hide default HTML checkbox */
+.tools-setting .uk-switch input {
   display: none;
 }
 
-.slider {
+/* Slider */
+.tools-setting .uk-switch-slider {
+  background-color: rgba(0, 0, 0, 0.22);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  border-radius: 500px;
   bottom: 0;
   cursor: pointer;
-  background-color: #ccc;
-  transition: .4s;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.07);
+}
+
+/* Switch pointer */
+.tools-setting .uk-switch-slider:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+}
+
+/* Slider active color */
+.tools-setting input:checked + .uk-switch-slider {
+  background-color: #39f !important;
+}
+
+/* Pointer active animation */
+.tools-setting input:checked + .uk-switch-slider:before {
+  transform: translateX(26px);
+}
+
+/* Modifiers */
+.tools-setting .uk-switch-slider.uk-switch-on-off {
+  background-color: #f0506e;
+}
+
+.tools-setting input:checked + .uk-switch-slider.uk-switch-on-off {
+  background-color: #32d296 !important;
+}
+
+/* Style Modifier */
+.tools-setting .uk-switch-slider.uk-switch-big:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+.tools-setting .uk-switch-slider.uk-switch-small:before {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+.tools-setting input:checked + .uk-switch-slider.uk-switch-big:before {
+  transform: translateX(26px) scale(1.2);
+}
+
+/* Inverse Modifier - affects only default */
+.tools-setting .uk-light .uk-switch-slider:not(.uk-switch-on-off) {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.uk-tab > * > a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25em;
+  justify-content: center;
+  padding: 10px 10px;
+  color: #a3a4a8;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color, border-color, box-shadow;
+  line-height: 20px;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 3px solid transparent;
+}
+.uk-tab::before {
+  display: none;
+}
+.uk-modal-dialog {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 600px;
+  max-width: 100% !important;
+  background: #fafafa;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: 0.3s linear;
+  transition-property: opacity, transform;
   border-radius: 20px;
 }
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 17px;
-  width: 18px;
-  left: 2px;
-  bottom: 5px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+.uk-modal-header {
+  display: flow-root;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid #e5e5e7;
 }
 
-input:checked + .slider {
-  background-color: #140F4D;
-}
-
-input:checked + .slider:before {
-  transform: translateX(20px);
-}
-
-.ss-toolkit-tab2{
-  display: block;
-  border: 1px solid #c3c4c7;
-  background: #FFF;
-  height: 80vh;
-}
-
-.ss-toolkit-card {
-  width: 380px;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  height: 100%;
-}
-.ss-toolkit-card-content {
-  padding: 10px;
-  height: 100%;
-}
-
-.ss-toolkit-card-content h3,.ss-toolkit-tab2 .ss-toolkit-card2 h3 {
-  margin: 0px 0px 15px 0px;
-  font-size: 18px;
-}
-
-.ss-toolkit-card-content p {
-  margin: 2px 0 6.8em !important;
-}
-
-.ss-toolkit-card-content a, .ss-save-btn {
-  background-color: #140F4D;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  color: #fff;
-  cursor: pointer;
-}
-
-.ss-toolkit-card-content a:hover, .ss-save-btn a:hover{
-  background-color: #c3c4c7;
-  color: #140F4D;
-}
-
-.ss-toolkit-card-bottom{
+.textarea-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0px;
-  margin-top: auto;
-  height: 100%;
 }
 
-.ss-toolkit-tab2 .ss-toolkit-card2{
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 13px;
-  font-size: 15px;
+.textarea-container {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  flex-wrap: wrap;
 }
 
-/* ShortCode Popup */
-
-.ss-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+.remove-custom-function {
+  margin-left: 10px; /* Adjust spacing between textarea and button */
 }
 
-.ss-popup-content {
-  background-color: #fff;
-  max-width: 65%;
-  margin: 100px auto;
-  padding: 20px;
+.ss-bottom-btn { display: flex; align-items: center; }
+.ss-bottom-btn .ss-bottom-switch-btn { text-align: right; }
+input[type=checkbox].custom-function-switch { margin-left: 8px !important; padding: 12px !important; }
+input[type=checkbox].custom-function-switch:checked::before { margin: -1rem 0 0 -1.1rem; height: 2rem; width: 2rem; }
+.remove-custom-function {
+  background-color: transparent;
+  border: 1px solid #818181 !important;
+  padding: 8px;
   border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  height: 500px;
-  overflow: auto;
+  height: 26px;
+  padding-top: 0;
+  margin-top: -2px;
 }
+button#add-textarea { background-color:  #fff !important; }
+#textarea-wrapper { margin: 10px auto; }
+.textarea-group textarea { margin-top: 10px; }
+.uk-modal-header { border-radius: 50px; }
 
-.ss-close-popup {
-  margin-top: 10px;
-}
-
-.ss-pop-header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.ss-close-btn{
-  font-size: 16px;
-  cursor: pointer;
+input.ss-form-input{ background-repeat: no-repeat; padding: 10px !important; background-size: contain; }
+.uk-form-controls { margin-top: 10px; }
+.uk-input,input[type=text]{
+  border: 0;
+  border-bottom: 1px solid #818181 !important;
 }
 
 .ss_toolkit_message{
-  display: none;
-  text-align: center;
-  font-size: 14px;
   color: green;
-  font-weight: bold;
 }
 
-.ss-toolkit-card2 span{
-  margin-right: 25px;
-  font-size: 14px
-}
-
-.ss-popup textarea{
-  width: 100%;
-}
-
-.ss-toolkit-card2 input[type="text"]{
-  width: 50%;
-}
-
-.checkboxes input{
-  margin: 0px 0px 0px 0px;
-}
-
-.checkboxes label{
-  margin: 0px 20px 0px 3px;
-}
-
-.save-btn-div{
-  display: flex;
-  flex-direction: row-reverse;
+input.ss-checkbox 
+{ 
+  background-repeat: no-repeat; 
+  padding: 10px !important; 
+  background-size: contain; 
 }
