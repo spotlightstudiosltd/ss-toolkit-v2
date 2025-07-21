@@ -7,6 +7,7 @@ body {background: transparent; }
     align-items: center;
     width: 100%;
 }
+.page-slider { background: rgba(0, 0, 0, 1) !important; }
 .page-row a:focus { color: transparent; box-shadow: none; }
 .page-slider .uk-card img { height: 250px; width: 100%; object-fit: cover; }
 .page-slider .uk-card-body { padding: 20px 0; box-shadow: none; color: #fff; font-family: 'Work Sans', sans-serif; }
@@ -201,7 +202,6 @@ body {background: transparent; }
     .page-form .submit input { padding: 0px 50px; }
 }
 
-
 .link-btn{
     padding: 0% 22%;
     text-align: center;
@@ -241,4 +241,3 @@ body {background: transparent; }
     font-weight: 700;
     color: red;
 }
-

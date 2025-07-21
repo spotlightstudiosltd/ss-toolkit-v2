@@ -83,7 +83,7 @@ $update = new ToolkitGitHubPluginUpdater(SLUG,GITHUBUSERNAME,GITHUBPROJECTREPO,A
  */
 function run_ss_toolkit() {
 
-	$plugin = new Ss_Toolkit();
+	$plugin = new ss_toolkit();
 	$plugin->run();
 
 }
